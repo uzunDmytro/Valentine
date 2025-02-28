@@ -1,0 +1,201 @@
+/* styles*/
+body {
+    margin: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    justify-content: center !important;
+    overflow: hidden;
+
+}
+.bg {
+    width: 200dvw !important;
+    height: 200dvh !important;
+    top: -100dvh !important;
+    left: -100dvw !important;
+    position: fixed !important;
+    background: linear-gradient(-45deg, #ff0000 0%, #ca42fa 100%) !important;
+    animation: moveBg 10s linear infinite !important;
+}
+
+.trigger-btn {
+    border-radius: 15px !important;
+    position: absolute !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    background-color: rgba(30, 20, 34, 0) !important;
+    color: #000005 !important;
+    z-index: 1 !important;
+    padding: 15px !important;
+    animation: shakeTriggerBtn 4s linear infinite;
+    pointer-events: auto !important;
+    border-style: hidden;
+    font-family: "Garamond", serif;
+}
+.svg-icon {
+    position: fixed !important;
+    top: 110%;
+    z-index: 10 !important;
+    animation: moveHearts 3.5s linear forwards !important;
+}
+.text{
+    background-color: #fffffd !important;
+    color: #000001 !important;
+    border-radius: 10px !important;
+    padding: 30px !important;
+    position: absolute !important;
+    text-align: center !important;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5) !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    font-size: 3vh !important;
+    opacity: 0;
+    font-family: "Garamond", serif;
+}
+.hidden {
+    animation: hide-sm-100 1s forwards;
+}
+.show{
+    animation: show-rd-btn-sm 1s forwards;
+}
+@media (orientation: portrait) {
+    .trigger-btn {
+        width: 55dvw;
+        font-size: 5vh;
+        left: calc(50% - 27.5dvw);
+        top: calc(50% - 2.5dvh);
+    }
+    .svg-icon{
+        width: 9vh;
+        height: 9vh;
+    }
+    .text{
+        font-size: 3vh !important;
+    }
+}
+@media (orientation: landscape) {
+    .trigger-btn {
+        width: 40dvw;
+        font-size: 6dvw;
+        left: calc(50% - 20dvw);
+        top: calc(50% - 18dvh);
+    }
+    .svg-icon{
+        width: 12dvh;
+        height: 12dvh;
+    }
+    .text{
+        font-size: 3dvw !important;
+    }
+}
+@keyframes moveBg {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    50% {
+        transform: translate(50%, 50%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+@keyframes shakeTriggerBtn {
+    40% {
+        transform: rotate(0deg);
+    }
+    45% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    55% {
+        transform: rotate(2deg);
+    }
+    60% {
+        transform: rotate(-1deg);
+    }
+    65% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes moveHearts{
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0%, -3500%);
+        opacity: 0;
+    }
+}
+
+
+@keyframes show-rd-btn-sm {
+    0% {
+        transform: translate(-50%, -50%) translateY(10dvh);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes hide-sm-100 {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+
+
+.trigger-btn:before,
+.trigger-btn:after
+{
+    content: "";
+    display: block;
+    height: 14px;
+    width: 100%;
+    background-image: url('border-icon.svg');
+    background-repeat: round;
+    position: absolute;
+}
+
+.trigger-btn:before {
+    top: 0;
+    left: 0;
+}
+.trigger-btn:after {
+    bottom: 0;
+    left: 0;
+
+}
+
+.left-btn-border,
+.right-btn-border {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 100%;
+    background-image: url('border-icon.svg');
+    background-repeat: round;
+    position: absolute;
+}
+
+.left-btn-border {
+    left: 0;
+    top: 0;
+}
+
+.right-btn-border {
+    right: 0;
+    top: 0;
+}
