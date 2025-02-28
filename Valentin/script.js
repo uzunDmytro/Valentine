@@ -4,6 +4,8 @@ function triggerBtnClick() {
     setTimeout(clearSvgElements, 3600);
     document.querySelector(".trigger-btn").style.display = "none";
 }
+
+// Hearts spawn
 function createSVGElements(count) {
     for (let i = 0; i < count; i++) {
         const svgElement = document.createElement("div");
